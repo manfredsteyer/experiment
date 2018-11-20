@@ -30,8 +30,9 @@ export class FlightEditComponent implements OnInit {
       .data
       .pipe(
         pluck('flight'),
+        // Alternative pluck<object, Flight>('flight'),
       )
-      .subscribe((flight) => {
+      .subscribe((flight: Flight) => {
         this.patchForm(flight);
       });
   }
